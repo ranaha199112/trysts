@@ -50,7 +50,7 @@ export default function Home() {
                   onClick={() => setShowForm(true)}
                 >
                   <div className="bg-white rounded-md w-10 h-10"></div>
-                  <p className="">Login with Tryst</p>
+                  <p className="">Login with Tryst.Link</p>
                 </button>
               </div>
             </div>
