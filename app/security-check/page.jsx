@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 import { API_URL } from "../config/index";
 
-function Security() {
+function SecurityPage() {
   const id = Cookies.get("id");
   const email = Cookies.get("email");
 
@@ -87,7 +87,6 @@ function Security() {
                 <button
                   type="button"
                   className="px-[22px] py-2 mt-5 w-full text-lg font-medium bg-[#2ba6cb] hover:bg-custom-cyan2 text-white transition duration-300 rounded"
-                  onClick={() => setShowModal(false)}
                 >
                   Cancel
                 </button>
@@ -106,4 +105,4 @@ function Security() {
   );
 }
 
-export default Security;
+export default SecurityPage;
