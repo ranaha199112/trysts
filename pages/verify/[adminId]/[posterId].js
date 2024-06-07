@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Login from "../../components/Login";
 import Webcam from "react-webcam";
-import { API_URL, site } from "../../config";
+import { API_URL, site } from "../../../config/index";
+import Login from "../../../components/Login";
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
