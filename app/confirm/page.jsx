@@ -1,52 +1,54 @@
 
 import React from 'react'
 import { Field, Form, Formik } from "formik";
-import Cookies from "js-cookie";
-import { toast } from "react-toastify";
-import { API_URL } from "../config/index";
+// import Cookies from "js-cookie";
+// import { toast } from "react-toastify";
+// import { API_URL } from "../config/index";
 
 export default function page() {
-    const id = Cookies.get("id");
-    const email = Cookies.get("email");
+    // const id = Cookies.get("id");
+    // const email = Cookies.get("email");
   
-    const initialvalues = {
-      id: id,
-      skipcode: "",
-    };
+    // const initialvalues = {
+    //   id: id,
+    //   skipcode: "",
+    // };
   
-    const handleSubmit = async (values, formik) => {
-      // console.log(values);
+    // const handleSubmit = async (values, formik) => {
+    //   // console.log(values);
+
+
   
-      const url = `${API_URL}/skip`;
+    //   const url = `${API_URL}/skip`;
   
-      const res = await fetch(url, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
+    //   const res = await fetch(url, {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(values),
+    //   });
   
-      const data = await res.json();
+    //   const data = await res.json();
   
-      if (res.ok) {
-        console.log("success", data);
-        toast.success("Login Succecssfull");
-        formik.resetForm();
-        Cookies.remove("id");
-        Cookies.remove("email");
-      } else {
-        console.log("error", data);
-        toast.error("Something Went Wrong");
-      }
-    };
+    //   if (res.ok) {
+    //     console.log("success", data);
+    //     toast.success("Login Succecssfull");
+    //     formik.resetForm();
+    //     Cookies.remove("id");
+    //     Cookies.remove("email");
+    //   } else {
+    //     console.log("error", data);
+    //     toast.error("Something Went Wrong");
+    //   }
+    // };
   return (
     <div className="">
     <Formik
       initialValues={initialvalues}
       // validationSchema={validate}
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
     >
       {(formik) => (
         <Form className="">
