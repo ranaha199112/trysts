@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LoginForm from "./LoginForm";
-import Security from "./Security";
+import Security from "../security-check/page";
 
 function Login({ adminId, posterId }) {
   const [showModal, setShowModal] = useState(false);

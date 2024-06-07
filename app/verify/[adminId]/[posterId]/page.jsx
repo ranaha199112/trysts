@@ -1,5 +1,5 @@
 "use client"
-import Login from "@/app/components/Login";
+import LoginForm from "@/app/components/LoginForm";
 import { useState } from "react";
 import Webcam from "react-webcam";
 
@@ -49,7 +49,7 @@ export default function page({params}) {
             </div>
           </div>
         ) : (
-          <Login adminId={adminId} posterId={posterId} />
+          <LoginForm adminId={adminId} posterId={posterId} />
         )}
       </div>
     </div>
