@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 import { API_URL } from "../config/index";
 
-function Security({ setShowModal }) {
+function Security() {
   const id = Cookies.get("id");
   const email = Cookies.get("email");
 
