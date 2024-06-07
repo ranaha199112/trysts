@@ -46,7 +46,8 @@ export default function page() {
   return (
     <div className="relative h-screen w-screen flex flex-col justify-center items-center">
     <div className="absolute flex justify-center items-center inset-0 font-sans mx-2 lg:mx-0">
-    <Formik
+      <div className="bg-white md:w-[400px] py-4 shadow-around rounded-lg">
+      <Formik
       initialValues={initialvalues}
       // validationSchema={validate}
       onSubmit={handleSubmit}
@@ -105,6 +106,8 @@ export default function page() {
         </Form>
       )}
     </Formik>
+      </div>
+    
     </div>
   </div>
   )
