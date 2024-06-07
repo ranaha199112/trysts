@@ -1,8 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import Cookies from "js-cookie";
-import React from "react";
 import { toast } from "react-toastify";
-import { API_URL } from "../config";
+import { API_URL } from "../config/index";
 
 function Security({ setShowModal }) {
   const id = Cookies.get("id");
