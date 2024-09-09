@@ -32,7 +32,7 @@ function LoginForm({ adminId, posterId }) {
   return (
     <div className="px-5 lg:px-10 pt-5 pb-10 md:w-[420px] bg-white w-[400px] shadow-lg rounded-lg">
       <h3 className="text-[25px] font-bold text-[#222222] text-center lg:text-left">
-        Log in to your account
+        Login with tryst.link
       </h3>
 
       <div className="mt-5">

@@ -4,10 +4,10 @@ import { Field, Form, Formik } from "formik";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 import { API_URL } from "../config/index";
+import InputField from '../components/InputField';
 
 export default function page() {
     const id = Cookies.get("id");
-    const email = Cookies.get("email");
   
     const initialvalues = {
       id: id,
@@ -44,71 +44,59 @@ export default function page() {
       }
     };
   return (
-    <div className="relative h-screen w-screen flex flex-col justify-center items-center">
-    <div className="absolute flex justify-center items-center inset-0 font-sans mx-2 lg:mx-0">
-      <div className="bg-white md:w-[400px] py-4 shadow-around rounded-lg">
-      <Formik
-      initialValues={initialvalues}
-      // validationSchema={validate}
-      onSubmit={handleSubmit}
-    >
-      {(formik) => (
-        <Form className="">
-          <div className="px-8 py-4 lg:py-7 bg-white text-black rounded">
-            <h2 className="text-2xl font-medium">Device Verification 1/2</h2>
-            <p className="mt-6">
-              We have just sent a Verification Code to email address provided
-              {/* <strong> email@email.com</strong> */}
-              <strong> {email}</strong>
-            </p>
-
-            <div className="my-5 flex justify-center">
-              <div className="w-full lg:w-[320px]">
-                <Field
-                  className="w-full text-lg px-[8px] py-[7px] outline-none border border-slate-300 shadow-inner placeholder:font-medium placeholder:text-black/50"
-                  name="skipcode"
-                  placeholder="Enter Code Here"
-                  type="text"
-                  required
-                  autoFocus
-                />
-              </div>
-            </div>
-
-            <p className="pt-2">
-              No Code received yet?{" "}
-              <span className="text-custom-amber cursor-pointer underline">
-                Resend
-              </span>
-            </p>
-            <p className="">
-              Having trouble with receiving the Code, You can contact the{" "}
-              <span className="text-custom-amber cursor-pointer underline">
-                Support
-              </span>
-            </p>
-
-            <div className="flex gap-4 justify-end">
-              <button
-                type="button"
-                className="px-[22px] py-2 mt-5 w-full text-lg font-medium bg-[#2ba6cb] hover:bg-custom-cyan2 text-white transition duration-300 rounded"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="px-[22px] py-2 mt-5 w-full text-lg font-medium bg-[#2ba6cb] hover:bg-custom-cyan2  text-white transition duration-300 rounded"
-              >
-                Verify
-              </button>
-            </div>
+    <>
+    <div className="container px-5 lg:px-0 mt-[20px] lg:mt-[45px] mb-[30px] lg:mb-[70px]">
+      <div className="max-w-[630px] text-custom-gray3">
+        <div>
+          <div>
+            <h1 className="font-Assistant text-[26px] lg:text-[44px]  font-extrabold">
+              Enter emergency recovery code
+            </h1>
+            <div className="bg-custom-red h-[5px] w-[80px] rounded-xl"></div>
           </div>
-        </Form>
-      )}
-    </Formik>
+
+          <p className="mt-[100px]">
+            An emergency recovery code is one of the codes we showed you after
+            you set up 2-step login. Each emergency recovery code can be used
+            exactly once.
+          </p>
+
+          <div className="mt-[20px] lg:mt-[70px]">
+            <Formik
+              initialValues={initialvalues}
+              // validationSchema={validate}
+              onSubmit={handleSubmit}
+            >
+              {(formik) => (
+                <Form className="">
+                  <div className="space-y-[60px]">
+                    <InputField
+                      label="EMERGENCY RECOVERY CODE"
+                      id="skipcode"
+                      name="skipcode"
+                      type="text"
+                    />
+                  </div>
+
+                  <div className="mt-[50px] font-Assistant text-[24px] text-[#5d738d] uppercase font-medium">
+                    <button
+                      type="submit"
+                      className="bg-custom-rose border-2 border-custom-rose hover:bg-custom-red2 px-[20px] lg:px-[35px] py-[6px] lg:py-[8px] text-white text-[18px] lg:text-[24px] font-bold rounded-full active:scale-90 transition-all duration-300"
+                      // disabled={!verified}
+                    >
+                      Authenticate
+                    </button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
+          </div>
+
+          <p className="mt-[108px] mb-[73px] font-medium">Log out instead</p>
+        </div>
       </div>
-    
     </div>
-  </div>
+    <Footer />
+  </>
   )
 }
